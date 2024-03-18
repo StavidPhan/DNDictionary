@@ -28,7 +28,7 @@ public class DNDictionary extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("WelcomeScene.fxml")));
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/WelcomeScene.fxml")));
 
             Scene scene = new Scene(root);
             stage.setTitle(Utilities.APP_TITLE);

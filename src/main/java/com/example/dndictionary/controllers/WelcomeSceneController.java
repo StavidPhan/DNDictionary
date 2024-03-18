@@ -1,4 +1,4 @@
-package com.example.dndictionary;
+package com.example.dndictionary.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
