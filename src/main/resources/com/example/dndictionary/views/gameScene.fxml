@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="rootAnchorPane" fx:id="rootAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.retardict.GameSceneController">
+   <Button id="gameButton" layoutX="854.0" layoutY="246.0" mnemonicParsing="false" onAction="#switchToChooseItemGameScene" prefHeight="86.0" prefWidth="255.0" text="Choose Item">
+      <font>
+         <Font name="Comic Sans MS" size="23.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="70.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" translateX="-12.0">
+            <image>
+               <Image url="@../pictures/game_image/choose_item.png" />
+            </image>
+         </ImageView>
+      </graphic>
+      </Button>
+   <Label id="mcQuestion" layoutX="614.0" layoutY="89.0" text="Choose game:">
+      <font>
+         <Font size="30.0" />
+      </font></Label>
+   <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="47.0" text="X" />
+   <Button id="gameButton" layoutX="272.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToChooseItemGameScene" prefHeight="86.0" prefWidth="293.0" text="Word matching">
+      <font>
+         <Font name="Comic Sans MS" size="23.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="70.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" translateX="-12.0">
+            <image>
+               <Image url="@../pictures/game_image/word_matching.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="gameButton" layoutX="835.0" layoutY="413.0" mnemonicParsing="false" onAction="#switchToChooseItemGameScene" prefHeight="86.0" prefWidth="239.0" text="Memorise">
+      <font>
+         <Font name="Comic Sans MS" size="23.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="70.0" fitWidth="112.0" pickOnBounds="true" preserveRatio="true" translateX="-12.0">
+            <image>
+               <Image url="@../pictures/game_image/time.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="gameButton" layoutX="464.0" layoutY="531.0" mnemonicParsing="false" onAction="#switchToChooseItemGameScene" prefHeight="86.0" prefWidth="220.0" text="Hangman">
+      <font>
+         <Font name="Comic Sans MS" size="23.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="70.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true" translateX="-12.0">
+            <image>
+               <Image url="@../pictures/game_image/hangman-game.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Button id="gameButton" layoutX="472.0" layoutY="200.0" mnemonicParsing="false" onAction="#switchToChooseItemGameScene" prefHeight="86.0" prefWidth="271.0" text="Multiple choice">
+      <font>
+         <Font name="Comic Sans MS" size="23.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="70.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true" translateX="-6.0">
+            <image>
+               <Image url="@../pictures/game_image/multiple-choice.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>
