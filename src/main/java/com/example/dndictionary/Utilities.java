@@ -6,3 +6,4 @@ public class Utilities {
     public static final int APP_HEIGHT = 720;
     public static final String PATH_TO_ICON = "src\\main\\resources\\com\\example\\dndictionary\\pictures\\icon.png";
 }
+
