@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/Word.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/SidePaneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/SidePane.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/darkBlue.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/darkGreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/darkOrange.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/lightBlue.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/lightGreen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/lightOrange.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ApplicationColorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/SettingSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/DNDictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/DNDictionary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/Utilities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/WelcomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/WelcomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/WelcomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/WelcomeScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,27 +47,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.MainCommandLine.executor": "Run",
-    "Maven.DNDictionary [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tabHome",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.MainCommandLine.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.DNDictionary [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;tabHome&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\codeLearn\java_app\javaFX\DNDictionary\src\main\resources\com\example\dndictionary\views" />
@@ -127,7 +114,8 @@
       <workItem from="1710773112802" duration="12000" />
       <workItem from="1710927345075" duration="1395000" />
       <workItem from="1711535707075" duration="1428000" />
-      <workItem from="1711544265921" duration="12303000" />
+      <workItem from="1711544265921" duration="12405000" />
+      <workItem from="1711588594918" duration="663000" />
     </task>
     <servers />
   </component>

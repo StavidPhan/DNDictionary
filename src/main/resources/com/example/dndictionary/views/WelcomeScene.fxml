@@ -12,7 +12,7 @@
 
 <AnchorPane id="rootAnchorPane" fx:id="rootAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.WelcomeSceneController">
   <children>
-    <TextField fx:id="searchBox" layoutX="300.0" layoutY="50.0" prefHeight="25.0" prefWidth="400.0" AnchorPane.topAnchor="50.0" />
+    <TextField fx:id="searchBox" text="Search" layoutX="300.0" layoutY="50.0" prefHeight="25.0" prefWidth="400.0" AnchorPane.topAnchor="50.0" />
     <ListView fx:id="list" layoutX="300.0" layoutY="119.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="320.0" />
     <AnchorPane id="wordVBoxBackground" prefHeight="620.0" prefWidth="400.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
       <children>

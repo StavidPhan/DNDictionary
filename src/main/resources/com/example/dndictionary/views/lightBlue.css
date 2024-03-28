@@ -198,20 +198,6 @@
     -fx-background-color: -accent-color;
 }
 
-#newCatButton {
-    -fx-text-fill: -text-color;
-    -fx-background-color: -secondary-color;
-    -fx-border-radius: 10;
-    -fx-border-width: 1;
-    -fx-border-color: -accent-color;
-    -fx-background-radius: 10;
-}
-
-#newCatButton:hover {
-    -fx-background-color: -main-color;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 5, 5);
-}
-
 #wordCellButton {
     -fx-background-color: -secondary-color;
     -fx-background-radius: 20;

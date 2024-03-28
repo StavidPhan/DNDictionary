@@ -33,7 +33,8 @@ public class DNDictionary extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/com/example/dndictionary/views/WelcomeScene.fxml")));
+            String viewsPath = "/com/example/dndictionary/views/";
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(viewsPath + "WelcomeScene.fxml")));
 
             Scene scene = new Scene(root);
             stage.setTitle(Utilities.APP_TITLE);
@@ -42,6 +43,10 @@ public class DNDictionary extends Application {
             stage.setResizable(false);
             scene.setFill(Color.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
+
+            String css = this.getClass().getResource(viewsPath + "lightBlue.css").toExternalForm();
+            scene.getStylesheets().add(css);
+
             stage.setScene(scene);
 
             Image icon = new Image("file:" + Utilities.PATH_TO_ICON);

@@ -53,8 +53,8 @@ public class WelcomeSceneController extends Controller implements Initializable 
                 stage.setY(event.getScreenY() + yOffset);
             }
         });
-
-        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource("/com/example/dndictionary/views/SidePane.fxml"));
+        String viewsPath = "/com/example/dndictionary/views/";
+        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(viewsPath + "SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
             rootAnchor.getChildren().addAll(sidePaneLoaded);
