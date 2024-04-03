@@ -44,7 +44,7 @@ public class DNDictionary extends Application {
             scene.setFill(Color.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
 
-            String css = this.getClass().getResource(viewsPath + "lightBlue.css").toExternalForm();
+            String css = this.getClass().getResource(viewsPath + "lightOrange.css").toExternalForm();
             scene.getStylesheets().add(css);
 
             stage.setScene(scene);

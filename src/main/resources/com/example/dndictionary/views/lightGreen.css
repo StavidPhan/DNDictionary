@@ -363,4 +363,10 @@
     -fx-background-color: -accent-color;
 }
 
+.rounded-search-box {
+    -fx-background-radius: 20px !important;
+    -fx-border-radius: 20px !important;
+    -fx-border-color: #ccc !important;
+    -fx-border-width: 1px !important;
+}
 /* CSS styling for the translation scene */

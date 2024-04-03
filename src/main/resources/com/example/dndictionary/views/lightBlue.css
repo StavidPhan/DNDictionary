@@ -138,19 +138,17 @@
     -fx-font-size: 20;
     -fx-letter-spacing: 0.1em;
     -fx-background-radius: 20;
-
 }
 
 #sidePaneButton:hover {
     -fx-cursor: hand;
     -fx-text-fill: -text-color;
     -fx-background-color: -main-color;//linear-gradient(from -50% 50% to 100% 50%, -accent-color, -main-color)
--fx-background-radius: 20;
+    -fx-background-radius: 20;
     -fx-border-color: -main-color;
     -fx-border-radius: 50;
     -fx-letter-spacing: 1em;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 0, 0, 0, 0);
-
 }
 
 #sidePaneButton:pressed {
@@ -349,4 +347,10 @@
     -fx-background-color: -accent-color;
 }
 
+.rounded-search-box {
+    -fx-background-radius: 20px !important;
+    -fx-border-radius: 20px !important;
+    -fx-border-color: #ccc !important;
+    -fx-border-width: 1px !important;
+}
 /* CSS styling for the translation scene */
