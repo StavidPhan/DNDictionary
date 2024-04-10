@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -13,10 +14,14 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * Run Application Class.
+ * Class chạy bằng giao diện.
  */
 public class DNDictionary extends Application {
+    public Stage stage;
+
+    public Scene scene;
     private Parent root;
+
     /**
      * The start function to run application with FXML files
      *
@@ -28,7 +33,8 @@ public class DNDictionary extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/WelcomeScene.fxml")));
+            String viewsPath = "/com/example/dndictionary/views/";
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(viewsPath + "WelcomeScene.fxml")));
 
             Scene scene = new Scene(root);
             stage.setTitle(Utilities.APP_TITLE);
@@ -37,6 +43,10 @@ public class DNDictionary extends Application {
             stage.setResizable(false);
             scene.setFill(Color.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
+
+            String css = this.getClass().getResource(viewsPath + "lightOrange.css").toExternalForm();
+            scene.getStylesheets().add(css);
+
             stage.setScene(scene);
 
             Image icon = new Image("file:" + Utilities.PATH_TO_ICON);

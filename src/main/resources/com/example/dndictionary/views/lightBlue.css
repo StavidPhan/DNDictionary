@@ -1,0 +1,356 @@
+.root {
+    -fx-background-color: "white";
+    -main-color: #f1f1f1;
+    -secondary-color: #e8e8e8;
+    -accent-color: #3C91E6;
+    -text-color: #1a1a1a;
+}
+
+.label {
+    -fx-font-size: 20;
+    -fx-font-family: "Open Sans";
+    -fx-text-fill: -text-color;
+}
+
+.button {
+    -fx-text-fill: -text-color;
+}
+
+.button:pressed {
+    -fx-background-color: -accent-color;
+}
+
+.text-field {
+    -fx-accent: -main-color;
+    -fx-background-color: -secondary-color, white;
+    -fx-background-radius: 10;
+}
+
+.text-field:focused {
+    -fx-background-color: -main-color, white;
+    -fx-border-color: -accent-color;
+    -fx-border-radius: 10;
+}
+
+.list-view {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 10;
+    -fx-border-radius: 5;
+}
+
+.list-view:focused {
+    -fx-background-color: -main-color;
+    -fx-border-color: -accent-color;
+}
+
+.list-cell {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 10;
+    -fx-text-fill: -text-color;
+}
+
+.list-cell:odd {
+    -fx-background-color: -main-color;
+}
+
+.list-cell:focused {
+    -fx-background-color: -accent-color;
+}
+
+.tooltip {
+    -fx-show-delay: 0ms;
+}
+
+#meaningLabelCell {
+    -fx-font-size: 10;
+
+}
+
+#rootAnchorPane {
+    -fx-background-radius: 20;
+    -fx-border-radius: 0 0 18 18;
+    -fx-background-color: -main-color;
+    -fx-text-fill: -text-color;
+}
+
+#closeButton {
+    -fx-background-color: -main-color;
+    -fx-border-radius: 10;
+    -fx-border-color: -text-color;
+    -fx-border-width: 0;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 0 20 0 0;
+}
+
+#closeButton:hover {
+    -fx-background-color: -accent-color;
+    /*-fx-border-color: -accent-color;*/
+}
+
+#colorDisplay {
+    -fx-background-color: -accent-color;
+    -fx-background-radius: 50%;
+}
+
+#accentBox {
+    -fx-background-color: -secondary-color;
+    -fx-mark-color: -accent-color;
+    -fx-cursor: hand;
+    -fx-background-radius: 15;
+}
+
+#accentBox .context-menu {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 15;
+}
+
+#accentBox .menu-item:focused {
+    -fx-background-color: -accent-color;
+    -fx-background-radius: 15;
+}
+
+#accentBox .menu-item:focused > .label {
+    -fx-text-fill: white;
+}
+
+#dumbVBox {
+    -fx-background-color: -secondary-color;
+    -fx-text-fill: -text-color;
+
+}
+
+#sidePane {
+    -fx-text-fill: -text-color;
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 20;
+}
+
+#sidePane:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 0);
+}
+
+#sidePaneButton {
+    -fx-text-fill: -text-color;
+    -fx-background-color: -secondary-color;
+    -fx-border-width: 0;
+    -fx-font-size: 20;
+    -fx-letter-spacing: 0.1em;
+    -fx-background-radius: 20;
+}
+
+#sidePaneButton:hover {
+    -fx-cursor: hand;
+    -fx-text-fill: -text-color;
+    -fx-background-color: -main-color;//linear-gradient(from -50% 50% to 100% 50%, -accent-color, -main-color)
+    -fx-background-radius: 20;
+    -fx-border-color: -main-color;
+    -fx-border-radius: 50;
+    -fx-letter-spacing: 1em;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 0, 0, 0, 0);
+}
+
+#sidePaneButton:pressed {
+    -fx-background-color: -text-color;
+    -fx-text-fill: -main-color;
+}
+
+#newWordSubmitButton {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 20;
+    -fx-border-radius: 0 20 20 0;
+    -fx-border-color: -accent-color;
+    -fx-border-width: 0;
+    -fx-cursor: hand;
+}
+
+#newWordSubmitButton:hover {
+    -fx-background-color: -accent-color;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 0);
+}
+
+#wordVBoxBackground {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, -accent-color, -main-color);
+    -fx-background-radius: 20;
+}
+
+#themeButton {
+    -fx-background-color: -secondary-color;
+    -fx-border-width: 0;
+    -fx-font-size: 18;
+    -fx-background-radius: 15;
+    -fx-text-fill: -text-color;
+}
+
+#themeButton:hover {
+    -fx-cursor: hand;
+    -fx-text-fill: -text-color;
+    -fx-background-color: derive(-accent-color, 50%);
+    -fx-background-radius: 20;
+    -fx-border-color: -main-color;
+    -fx-border-radius: 50;
+}
+
+#themeButton:pressed {
+    -fx-background-color: -accent-color;
+}
+
+#wordCellButton {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-text-fill: -text-color;
+}
+
+#wordCellButton:hover {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.6), 5, 0, 0, 0);
+}
+
+#speakButton {
+    -fx-background-color: -secondary-color;
+    -fx-border-width: 0;
+    -fx-font-size: 18;
+    -fx-background-radius: 50;
+    -fx-text-fill: -text-color;
+}
+
+#speakButton:hover {
+    -fx-cursor: hand;
+    -fx-text-fill: -text-color;
+    -fx-background-color: derive(-accent-color, 50%);
+    -fx-background-radius: 50;
+    -fx-border-color: -main-color;
+    -fx-border-radius: 50;
+}
+
+#wordTestFirst {
+    -fx-text-fill: -text-color;
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
+
+}
+
+#wordTestSecond {
+    -fx-text-fill: -main-color;
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
+    -fx-background-color: -accent-color;
+    -fx-background-radius: 5;
+}
+
+#wordBentoBox {
+    -fx-text-fill: -text-color;
+    -fx-background-color: -main-color;
+    -fx-background-radius: 10;
+    -fx-font-size: 15;
+}
+
+#premiumUnlockButton {
+    -fx-background-color: -secondary-color;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-width: 1;
+    -fx-border-color: derive(-accent-color, 50%);
+    -fx-text-fill: -text-color;
+}
+
+#premiumUnlockButton:hover {
+    -fx-background-color: derive(-accent-color, 50%);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.1, 1, 1);
+}
+
+#bookmarkButton {
+
+}
+
+/* CSS styling for the game scene */
+#gameButton {
+    -fx-background-color: -seccondary-color;
+    -fx-border-width: 0;
+    -fx-font-size: 20;
+    -fx-background-radius: 20;
+    -fx-text-fill: -text-color;
+}
+
+#gameButton:hover {
+    -fx-cursor: hand;
+    -fx-text-fill: -text-color;
+    -fx-background-color: -accent-color;
+    -fx-background-radius: 20;
+    -fx-border-color: -main-color;
+    -fx-border-radius: 50;
+}
+
+/* CSS styling for the multiple choice game */
+#answerButton {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.63), 11, 0, 0, 1);
+    -fx-background-color: rgb(199, 180, 147);
+    -fx-text-fill: -text-color;
+}
+
+#answerButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(132, 113, 79);
+}
+
+#functionButton {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.63), 11, 0, 0, 1);
+    -fx-background-color: rgb(192, 177, 149);
+}
+
+#functionButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: rgba(132, 113, 79);
+}
+
+#mcAnchorPane {
+    -fx-background-color: rgba(226, 241, 175);
+}
+
+#mcText {
+    -fx-font-size: 20;
+    -fx-font-family: "Open Sans";
+    -fx-alignment: center;
+    -fx-text-fill: white;
+}
+
+#mcQuestion {
+    -fx-font-size: 50;
+    -fx-font-family: "Open Sans";
+    -fx-alignment: center;
+    -fx-text-fill: -text-color;
+}
+
+#mcGridPane1 {
+    -fx-background-color: rgba(49, 35, 30);
+}
+
+/* CSS styling for the choose item game */
+#image {
+
+}
+
+#image:hover {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.63), 11, 0, 5, 5);
+}
+
+#gameButton {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.63), 11, 0, 0, 1);
+    -fx-background-color: -secondary-color;
+}
+
+#gameButton:hover {
+    -fx-cursor: hand;
+    -fx-background-color: -accent-color;
+}
+
+.rounded-search-box {
+    -fx-background-radius: 20px !important;
+    -fx-border-radius: 20px !important;
+    -fx-border-color: #ccc !important;
+    -fx-border-width: 1px !important;
+}
+/* CSS styling for the translation scene */
