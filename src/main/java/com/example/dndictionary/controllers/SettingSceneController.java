@@ -46,6 +46,7 @@ public class SettingSceneController extends Controller implements Initializable 
     public static String theme = "LIGHT";
     public static String accentColor = "ORANGE";
     public static String cssAccent = COLOR.ORANGE.toString();
+    private final static String VIEWS_PATH = "/com/example/dndictionary/views/";
 
     public enum COLOR {
         BLUE {
@@ -113,8 +114,7 @@ public class SettingSceneController extends Controller implements Initializable 
                     cssAccent = COLOR.GREEN.toString();
 
                 }
-                String viewsPath = "/com/example/dndictionary/views/";
-                FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(viewsPath + "SettingScene.fxml"));
+                FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SettingScene.fxml"));
                 try {
                     root = settingSceneLoader.load();
                 } catch (IOException e) {
@@ -135,7 +135,7 @@ public class SettingSceneController extends Controller implements Initializable 
             themeButton.setText("DARK");
         }
 
-        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource("SidePane.fxml"));
+        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
             rootAnchor.getChildren().addAll(sidePaneLoaded);
@@ -151,7 +151,7 @@ public class SettingSceneController extends Controller implements Initializable 
             theme = "DARK";
             themeButton.setText("LIGHT");
 
-            FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource("SettingScene.fxml"));
+            FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SettingScene.fxml"));
             root = settingSceneLoader.load();
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -164,7 +164,7 @@ public class SettingSceneController extends Controller implements Initializable 
             theme = "LIGHT";
             themeButton.setText("DARK");
 
-            FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource("SettingScene.fxml"));
+            FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SettingScene.fxml"));
             root = settingSceneLoader.load();
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -177,16 +177,6 @@ public class SettingSceneController extends Controller implements Initializable 
     }
 
     @FXML
-    public void openPremiumRegister(ActionEvent event) throws IOException {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource("premiumRegister.fxml"));
-        Parent root = settingSceneLoader.load();
-
-        alert.setGraphic(root);
-        alert.show();
-    }
-
-    @FXML
     public void handleRating(MouseEvent event) {
         System.out.println(rating.getRating());
         String labelString = "User Rating: " + 5.0;
@@ -196,15 +186,9 @@ public class SettingSceneController extends Controller implements Initializable 
         ratingLabel.setText(labelString);
     }
 
-    public void showImage(ActionEvent event) throws FileNotFoundException {
-        Image image = new Image(new FileInputStream("src\\main\\resources\\ad.jpg"));
-        imageView.setImage(image);
-    }
-
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
 }
-
