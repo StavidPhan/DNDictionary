@@ -6,9 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,13 +20,12 @@ public class SidePaneController extends Controller implements Initializable {
         WELCOME_SCENE,
         ADD_NEW_WORD_SCENE,
         GAME_SCENE,
-        BOOKMARK_SCENE,
+        CAT_SCENE,
         TRANSLATION_SCENE,
         SETTING_SCENE
     }
-    private final static String VIEWS_PATH = "/com/example/dndictionary/views/";;
+    private final static String VIEWS_PATH = "/com/example/dndictionary/views/";
     public static SCENE currentScene = SCENE.WELCOME_SCENE;
-
     @FXML
     private Button homeButton;
     @FXML
@@ -32,12 +33,9 @@ public class SidePaneController extends Controller implements Initializable {
     @FXML
     private Button gameButton;
     @FXML
-    private Button bookmarkButton;
-    @FXML
     private Button translateButton;
     @FXML
     private Button settingButton;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         if (currentScene.equals(SCENE.WELCOME_SCENE)) {
@@ -46,8 +44,6 @@ public class SidePaneController extends Controller implements Initializable {
             userWordButton.setStyle("-fx-background-color: " + SettingSceneController.cssAccent);
         } else if (currentScene.equals(SCENE.GAME_SCENE)) {
             gameButton.setStyle("-fx-background-color: " + SettingSceneController.cssAccent);
-        } else if (currentScene.equals(SCENE.BOOKMARK_SCENE)) {
-            bookmarkButton.setStyle("-fx-background-color: " + SettingSceneController.cssAccent);
         } else if (currentScene.equals(SCENE.TRANSLATION_SCENE)) {
             translateButton.setStyle("-fx-background-color: " + SettingSceneController.cssAccent);;
         } else if (currentScene.equals(SCENE.SETTING_SCENE)) {
@@ -58,7 +54,6 @@ public class SidePaneController extends Controller implements Initializable {
     @FXML
     public void switchToMainScene(ActionEvent event) throws IOException {
         currentScene = SCENE.WELCOME_SCENE;
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "WelcomeScene.fxml"));
         root = fxmlLoader.load();
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -92,20 +87,6 @@ public class SidePaneController extends Controller implements Initializable {
         currentScene = SCENE.GAME_SCENE;
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
-
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        ApplicationColorController.setColor(scene);
-        scene.setFill(Color.TRANSPARENT);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    public void switchToBookmarkScene(ActionEvent event) throws IOException {
-        currentScene = SCENE.BOOKMARK_SCENE;
-        FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "bookmarkScene.fxml"));
-        root = settingSceneLoader.load();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
