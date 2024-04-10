@@ -65,14 +65,13 @@ public class WelcomeSceneController extends Controller implements Initializable 
             }
         });
 
-        rootAnchor.setOnMouseMoved(event -> {
-            double x = event.getX();
-            double y = event.getY();
-            rootAnchor.setStyle("-fx-background-color: radial-gradient(center " + 100*x/Utilities.APP_WIDTH + "% " + 100*y/Utilities.APP_HEIGHT + "%, radius 25%, #d4d4d4,  #e8e8e8);");
-            System.out.println("x = " + x + ", y = " + y);
-            System.out.println("x/Utilities.APP_WIDTH = " + x/Utilities.APP_WIDTH + ", y/Utilities.APP_HEIGHT = " + y/Utilities.APP_HEIGHT);
-        });
-//        searchBox.setPromptText("Search");
+//        rootAnchor.setOnMouseMoved(event -> {
+//            double x = event.getX();
+//            double y = event.getY();
+//            rootAnchor.setStyle("-fx-background-color: radial-gradient(center " + 100*x/Utilities.APP_WIDTH + "% " + 100*y/Utilities.APP_HEIGHT + "%, radius 25%, #d4d4d4,  #e8e8e8);");
+//            System.out.println("x = " + x + ", y = " + y);
+//            System.out.println("x/Utilities.APP_WIDTH = " + x/Utilities.APP_WIDTH + ", y/Utilities.APP_HEIGHT = " + y/Utilities.APP_HEIGHT);
+//        });
 
         ObservableList<Word> words = FXCollections.observableArrayList();
         ObservableList<Word> favorites = FXCollections.observableArrayList();
@@ -128,7 +127,7 @@ public class WelcomeSceneController extends Controller implements Initializable 
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                Word word = new Word(resultSet.getString("word"), resultSet.getString("pronunciation"),
+                Word word = new Word(resultSet.getString("word"), resultSet.getString("Pronunciation"),
                         resultSet.getString("description"), resultSet.getInt("isBookmarked"));
                 words.add(word);
             }

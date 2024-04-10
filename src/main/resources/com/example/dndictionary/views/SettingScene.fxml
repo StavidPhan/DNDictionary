@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.Rating?>
+
+<AnchorPane id="rootAnchorPane" fx:id="rootAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.SettingSceneController">
+    <children>
+        <GridPane layoutX="400.0" layoutY="150.0" prefHeight="332.0" prefWidth="643.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="457.0" minWidth="10.0" prefWidth="446.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="154.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="95.0" minHeight="0.0" prefHeight="95.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button id="themeButton" fx:id="themeButton" mnemonicParsing="false" onAction="#changeTheme" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ChoiceBox id="accentBox" fx:id="accentChooser" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Theme" GridPane.rowIndex="1" />
+                <Label text="Accent Color" GridPane.rowIndex="2" />
+                <Button id="colorDisplay" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="150.0" />
+                    </GridPane.margin>
+                </Button>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label prefHeight="36.0" prefWidth="144.0" style="-fx-font-weight: bold; -fx-font-size: 25;" text="Setting: " />
+                        <Label id="wordTestSecond" alignment="CENTER" prefHeight="36.0" prefWidth="170.0" text="DNDictionary" />
+                    </children>
+                </HBox>
+                <Rating fx:id="rating" onMouseClicked="#handleRating" rating="0.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label fx:id="ratingLabel" prefHeight="77.0" prefWidth="457.0" text="User Rating:" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="20.0" prefWidth="47.0" text="X" />
+    </children>
+</AnchorPane>

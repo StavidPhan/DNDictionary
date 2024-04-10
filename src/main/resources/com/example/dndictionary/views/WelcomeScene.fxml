@@ -17,9 +17,10 @@
 
 <AnchorPane id="rootAnchorPane" fx:id="rootAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.WelcomeSceneController">
   <children>
-    <TextField fx:id="searchBox" layoutX="300.0" layoutY="50.0" onKeyReleased="#searchWord" prefHeight="45.0" prefWidth="400.0" AnchorPane.topAnchor="50.0" promptText="Search..." styleClass="rounded-search-box"/>
-    <ListView fx:id="list" layoutX="300.0" layoutY="119.0" onMouseClicked="#displayWordInSearchList" prefHeight="282.0" prefWidth="400.0" AnchorPane.bottomAnchor="320.0" />
-    <AnchorPane id="wordVBoxBackground" prefHeight="620.0" prefWidth="400.0" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+    <HBox prefHeight="100.0" prefWidth="200.0" />
+    <TextField fx:id="searchBox" layoutX="300.0" layoutY="55.0" onKeyReleased="#searchWord" prefHeight="45.0" prefWidth="400.0" promptText="Search..." styleClass="rounded-search-box" AnchorPane.topAnchor="55.0" />
+    <ListView fx:id="list" layoutX="300.0" layoutY="123.0" onMouseClicked="#displayWordInSearchList" prefHeight="282.0" prefWidth="400.0" AnchorPane.bottomAnchor="315.0" />
+    <AnchorPane id="wordVBoxBackground" layoutX="830.0" layoutY="55.0" prefHeight="620.0" prefWidth="400.0" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="55.0">
       <children>
         <VBox id="wordVBox" layoutX="-4.0" layoutY="38.0" prefHeight="620.0" prefWidth="389.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
           <children>
@@ -57,7 +58,7 @@
             <Tooltip text="bookmark selected word" />
           </tooltip>
         </Button>
-        <Button id="speakButton" layoutX="351.0" layoutY="103.0" mnemonicParsing="false" onAction="#speak" prefHeight="45.0" prefWidth="45.0" text="🔊">
+        <Button id="speakButton" layoutX="351.0" layoutY="102.0" mnemonicParsing="false" onAction="#speak" prefHeight="45.0" prefWidth="45.0" text="📖📖📖📖📖📖📖📖📖📖📖📖📖📖📖📖📖📖📖🔊">
           <font>
             <Font size="19.0" />
           </font>
@@ -68,7 +69,8 @@
       </children>
     </AnchorPane>
     <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="47.0" text="X" />
-    <ListView fx:id="bookmarkList" layoutX="300.0" layoutY="370.0" onMouseClicked="#displayWordInBookmarkList" prefHeight="220.0" prefWidth="400.0" AnchorPane.bottomAnchor="50.0" />
-    <Label layoutX="300.0" layoutY="403.0" prefHeight="44.0" prefWidth="400.0" text="Bookmarked words:" />
+    <ListView fx:id="bookmarkList" layoutX="300.0" layoutY="455.0" onMouseClicked="#displayWordInBookmarkList" prefHeight="220.0" prefWidth="400.0" AnchorPane.bottomAnchor="45.0" />
+    <Label layoutX="300.0" layoutY="408.0" prefHeight="44.0" prefWidth="400.0" text="Bookmarked words:" />
+<!--  <Label id="wordTestSecond" alignment="CENTER" layoutX="590.0" layoutY="10.0" prefHeight="36.0" prefWidth="340.0" text="Welcome to DNDictionary" />-->
   </children>
 </AnchorPane>
