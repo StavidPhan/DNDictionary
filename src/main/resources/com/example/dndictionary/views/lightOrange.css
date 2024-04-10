@@ -255,6 +255,15 @@
     -fx-background-radius: 5;
 }
 
+#wordWelcome {
+    -fx-text-fill: -main-color;
+    -fx-font-weight: bold;
+    -fx-font-size: 25;
+    -fx-background-color: -accent-color;
+    -fx-background-radius: 20px;
+    -fx-border-radius: 10;
+}
+
 #wordBentoBox {
     -fx-text-fill: -text-color;
     -fx-background-color: -main-color;
