@@ -20,7 +20,6 @@ public class SidePaneController extends Controller implements Initializable {
         WELCOME_SCENE,
         ADD_NEW_WORD_SCENE,
         GAME_SCENE,
-        CAT_SCENE,
         TRANSLATION_SCENE,
         SETTING_SCENE
     }

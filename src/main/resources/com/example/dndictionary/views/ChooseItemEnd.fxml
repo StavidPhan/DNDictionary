@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="mcAnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.ChooseItemEndController">
+    <children>
+        <Label fx:id="scoreBox" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="122.0" prefHeight="18.0" prefWidth="678.0" text="Label" textAlignment="CENTER">
+            <font>
+                <Font size="40.0" />
+            </font>
+        </Label>
+        <Label fx:id="emotionBox" alignment="CENTER" contentDisplay="CENTER" layoutX="301.0" layoutY="176.0" prefHeight="18.0" prefWidth="678.0" text="Label">
+            <font>
+                <Font size="30.0" />
+            </font>
+        </Label>
+        <Button id="functionButton" layoutX="542.0" layoutY="369.0" mnemonicParsing="false" onAction="#replay" prefHeight="50.0" prefWidth="200.0" text="Replay">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+        <Button id="functionButton" layoutX="541.0" layoutY="284.0" mnemonicParsing="false" onAction="#switchToGameScene" prefHeight="50.0" prefWidth="200.0" text="Game Menu">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

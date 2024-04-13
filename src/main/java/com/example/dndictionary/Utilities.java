@@ -20,6 +20,8 @@ public class Utilities {
     public static final int APP_HEIGHT = 720;
     public static final String PATH_TO_DATABASE = "jdbc:sqlite:src\\main\\resources\\com\\example\\dndictionary\\database\\testdb.db";
     public static final String PATH_TO_ICON = "src\\main\\resources\\com\\example\\dndictionary\\pictures\\logo_app.png";
+    public final static String VIEWS_PATH = "/com/example/dndictionary/views/";
+    public final static String PICTURES_PATH = "src\\main\\resources\\com\\example\\dndictionary\\pictures\\";
     private static List<String> words = null;
     public static Connection connection;
 
