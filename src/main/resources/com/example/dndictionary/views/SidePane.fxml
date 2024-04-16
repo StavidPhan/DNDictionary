@@ -3,35 +3,41 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
-<?import org.controlsfx.glyphfont.Glyph?>
-
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+
 <VBox id="sidePane" prefHeight="720.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.SidePaneController">
     <children>
-        <Button id="sidePaneButton" fx:id="homeButton" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="25.0" prefWidth="250.0" text="Home">
+        <Button id="sidePaneButton" fx:id="homeButton" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="25.0" prefWidth="250.0" text="  Home">
             <graphic>
-                <Glyph fx:id="homeGlyph" prefHeight="30.0" prefWidth="35.0" text="🏠" />
+                <ImageView fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../pictures/home_sidePane.png"/>
+                </ImageView>
             </graphic>
             <padding>
                 <Insets bottom="20.0" left="10.0" right="140.0" top="20.0" />
             </padding>
         </Button>
-        <Button id="sidePaneButton" fx:id="userWordButton" mnemonicParsing="false" onAction="#switchToAddWordScene" prefHeight="25.0" prefWidth="250.0" text="Add New Word">
+        <Button id="sidePaneButton" fx:id="userWordButton" mnemonicParsing="false" onAction="#switchToAddWordScene" prefHeight="25.0" prefWidth="250.0" text="  Add New Word">
             <graphic>
-                <Glyph prefHeight="30.0" prefWidth="31.0" text="➕" />
+                <ImageView fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../pictures/add_sidePane.png"/>
+                </ImageView>
             </graphic>
             <padding>
                 <Insets bottom="20.0" left="10.0" right="60.0" top="20.0" />
             </padding>
         </Button>
-        <Button id="sidePaneButton" fx:id="gameButton" mnemonicParsing="false" onAction="#switchToGameScene" prefHeight="25.0" prefWidth="250.0" text="Game">
+        <Button id="sidePaneButton" fx:id="gameButton" mnemonicParsing="false" onAction="#switchToGameScene" prefHeight="25.0" prefWidth="250.0" text="  Game">
             <graphic>
-                <Glyph prefHeight="30.0" prefWidth="31.0" text="🎮" />
+                <ImageView fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../pictures/game_sidePane.png"/>
+                </ImageView>
             </graphic>
             <padding>
-                <Insets bottom="20.0" left="10.0" right="150.0" top="20.0" />
+                <Insets bottom="20.0" left="10.0" right="130.0" top="20.0" />
             </padding>
+
         </Button>
 <!--        <Button id="sidePaneButton" fx:id="bookmarkButton" mnemonicParsing="false" onAction="#switchToBookmarkScene" prefHeight="25.0" prefWidth="250.0" text="Bookmark">-->
 <!--            <graphic>-->
@@ -41,23 +47,31 @@
 <!--                <Insets bottom="20.0" right="100.0" top="20.0" />-->
 <!--            </padding>-->
 <!--        </Button>-->
-        <Button id="sidePaneButton" fx:id="translateButton" mnemonicParsing="false" onAction="#switchToTranslationScene" prefHeight="70.0" prefWidth="250.0" text="Translate">
+        <Button id="sidePaneButton" fx:id="translateButton" mnemonicParsing="false" onAction="#switchToTranslationScene" prefHeight="70.0" prefWidth="250.0" text="  Translate">
             <padding>
-                <Insets bottom="20.0" left="10.0" right="125.0" top="20.0" />
+                <Insets bottom="20.0" left="10.0" right="105.0" top="20.0" />
             </padding>
             <graphic>
-                <Glyph prefHeight="30.0" prefWidth="25.0" text="📑" />
+                <ImageView fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../pictures/translate_sidePane.png" />
+                    </image>
+                </ImageView>
             </graphic>
         </Button>
-        <Button id="sidePaneButton" fx:id="settingButton" mnemonicParsing="false" onAction="#switchToSettingScene" prefHeight="25.0" prefWidth="250.0" text="Setting">
+        <Button id="sidePaneButton" fx:id="settingButton" mnemonicParsing="false" onAction="#switchToSettingScene" prefHeight="25.0" prefWidth="250.0" text="  Setting">
             <VBox.margin>
                 <Insets top="350.0" />
             </VBox.margin>
             <graphic>
-                <Glyph prefHeight="30.0" prefWidth="29.0" text="⚙" />
+                <ImageView fitHeight="28.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../pictures/setting_sidePane.png" />
+                    </image>
+                </ImageView>
             </graphic>
             <padding>
-                <Insets bottom="20.0" left="10.0" right="140.0" top="20.0" />
+                <Insets bottom="20.0" left="10.0" right="120.0" top="20.0" />
             </padding>
         </Button>
     </children>
