@@ -112,11 +112,11 @@ public class SidePaneController extends Controller implements Initializable {
     @FXML
     public void switchToTranslationScene(ActionEvent event) throws IOException {
         currentScene = SCENE.TRANSLATION_SCENE;
-        FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "TranslationScene.fxml"));
+        FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource("TranslationScene.fxml"));
         root = settingSceneLoader.load();
 
-//        TranslationController controller = settingSceneLoader.getController();
-//        controller.init();
+        TranslationController controller = settingSceneLoader.getController();
+        controller.init();
 
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -125,4 +125,5 @@ public class SidePaneController extends Controller implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
 }
