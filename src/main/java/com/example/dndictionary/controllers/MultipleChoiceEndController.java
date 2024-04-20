@@ -36,8 +36,9 @@ public class MultipleChoiceEndController extends Controller {
         scoreBox.setText("Your Score: " + score);
         if (score == 0) {
             emotionBox.setText("Seriously?");
-        }
-        if (score == numberOfQuestions) {
+        } else if (score == numberOfQuestions) {
+            emotionBox.setText("Good job baby!");
+        } else {
             emotionBox.setText("Good job baby!");
         }
     }
