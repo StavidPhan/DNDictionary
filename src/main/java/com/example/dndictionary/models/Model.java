@@ -11,7 +11,7 @@ public class Model {
     private static Connection connection = null;
     public static boolean addUserDefinedWord(UserDefinedWord word) {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/testdb.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/com/example/dndictionary/database/testdb.db");
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO userDefinedWords VALUES (?, ?);");
             preparedStatement.setString(1, word.getWord());
             preparedStatement.setString(2, word.getMeaning());
@@ -33,7 +33,7 @@ public class Model {
 
     public static void deleteUserDefinedWord(String word) {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/testdb.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/com/example/dndictionary/database/testdb.db");
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM userDefinedWords WHERE word = ?;");
             preparedStatement.setString(1, word);
             preparedStatement.executeUpdate();
@@ -53,7 +53,7 @@ public class Model {
 
     public static void editUserDefinedWord(String oldWord, String newWord) {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/testdb.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:src/main/resources/com/example/dndictionary/database/testdb.db");
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE userDefinedWords SET word = ? WHERE word = ?;");
             preparedStatement.setString(1, newWord);
             preparedStatement.setString(2, oldWord);
