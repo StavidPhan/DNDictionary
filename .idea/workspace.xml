@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/oneHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/threeHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/twoHeart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManEndController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/HangMan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/HangManWord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman_game.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangMan.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangManEnd.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/GameSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/GameSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/database/testdb.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/database/testdb.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/gameScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/gameScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/testdb.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,7 @@
     "Maven.DNDictionary [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tabAddNewWord",
+    "git-widget-placeholder": "hangmanGame",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -88,7 +93,7 @@
       <updated>1710687235300</updated>
       <workItem from="1710687236370" duration="1435000" />
       <workItem from="1710747196370" duration="322000" />
-      <workItem from="1713620034007" duration="13471000" />
+      <workItem from="1713620034007" duration="31695000" />
     </task>
     <servers />
   </component>

@@ -71,10 +71,6 @@ public class MultipleChoiceController extends Controller {
         numberOfQuestionsUsed++;
     }
 
-    private void showEndScreen() throws IOException {
-
-    }
-
     // when press button next question
     @FXML
     public void setQuestion(ActionEvent event) throws IOException {
