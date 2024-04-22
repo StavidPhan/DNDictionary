@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane id="rootAnchorPane" fx:id="rootAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.TranslationController">
+   <children>
+      <HBox layoutX="298.4" layoutY="67.0" prefHeight="249.0" prefWidth="907.0" AnchorPane.bottomAnchor="404.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="67.0">
+         <children>
+            <TextArea fx:id="inputArea" onKeyReleased="#countChar" prefHeight="200.0" prefWidth="500.0" />
+            <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="500.0" />
+         </children>
+      </HBox>
+      <Button id="gameButton" fx:id="translateButton" layoutX="697.0" layoutY="368.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
+      <Label fx:id="sourceLabel" layoutX="451.0" layoutY="23.0" prefHeight="30.0" prefWidth="164.0" text="Label" />
+      <Label fx:id="targetLabel" layoutX="836.0" layoutY="24.0" prefHeight="30.0" prefWidth="147.0" text="Label" />
+      <Button id="gameButton" layoutX="680.0" layoutY="150.0" mnemonicParsing="false" onAction="#swapLanguage" text="Swap Languages" />
+      <Label fx:id="numOfCharLabel" layoutX="681.0" layoutY="318.0" text="Count Char" />
+      <TableView fx:id="records" layoutX="300.0" layoutY="432.0" prefHeight="223.0" prefWidth="924.0">
+         <columns>
+            <TableColumn fx:id="sourceLanguage" prefWidth="120.0" text="Source" />
+            <TableColumn fx:id="targetLanguage" prefWidth="120.0" text="Target" />
+            <TableColumn fx:id="sourceText" prefWidth="341.0" text="Source Text" />
+            <TableColumn fx:id="targetText" prefWidth="341.0" text="Target Text" />
+         </columns>
+      </TableView>
+      <Button id="gameButton" layoutX="883.0" layoutY="370.0" mnemonicParsing="false" onAction="#deleteHistory" text="Clear History" />
+      <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="47.0" text="X" />
+   </children>
+</AnchorPane>
