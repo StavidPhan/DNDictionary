@@ -47,22 +47,22 @@
                 <Image url="@../pictures/hangman0.png" />
             </image>
         </ImageView>
-        <Label fx:id="guessWord" layoutX="543.0" layoutY="260.0" prefHeight="88.0" prefWidth="594.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 60px;" text="kkkkkkkkkkkkkkkkkkkk">
+        <Label fx:id="guessWord" layoutX="502.0" layoutY="259.0" prefHeight="88.0" prefWidth="675.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 60px;">
             <font>
                 <Font name="Comcic Sans MS" size="30.0" />
             </font>
         </Label>
-        <Label fx:id="gameStatus" layoutX="558.0" layoutY="113.0" prefHeight="45.0" prefWidth="563.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 30px; -fx-wrap-text: true; -fx-text-fill: red;">
+        <Label fx:id="gameStatus" layoutX="558.0" layoutY="120.0" prefHeight="45.0" prefWidth="563.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 30px; -fx-wrap-text: true; -fx-text-fill: red;">
             <font>
                 <Font name="Comic Sans MS" size="30.0" />
             </font>
         </Label>
-        <TextArea fx:id="suggestBox" editable="false" layoutX="631.0" layoutY="407.0" prefHeight="108.0" prefWidth="478.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-wrap-text: true;" />
-        <TextField fx:id="guessChar" layoutX="665.0" layoutY="568.0" prefHeight="46.0" prefWidth="410.0" promptText="Enter the letter you guessed..." style="-fx-font-size: 20px;" styleClass="rounded-search-box" />
-          <Button id="functionButton" fx:id="replayButton" layoutX="788.0" layoutY="170.0" mnemonicParsing="false" onAction="#initializeQuestion" prefHeight="18.0" prefWidth="104.0" text="Replay" visible="false">
-         <font>
-            <Font size="18.0" />
-         </font>
-          </Button>
+        <TextArea fx:id="suggestBox" editable="false" layoutX="574.0" layoutY="411.0" prefHeight="106.0" prefWidth="530.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-wrap-text: true;" />
+        <TextField fx:id="guessChar" layoutX="641.0" layoutY="567.0" prefHeight="46.0" prefWidth="410.0" promptText="Enter the letter you guessed..." style="-fx-font-size: 20px;" styleClass="rounded-search-box" />
+        <Button id="functionButton" fx:id="replayButton" layoutX="785.0" layoutY="170.0" mnemonicParsing="false" onAction="#initializeQuestion" prefHeight="18.0" prefWidth="110.0" text="Replay" visible="false">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
     </children>
 </AnchorPane>
