@@ -47,7 +47,7 @@
                 <Image url="@../pictures/hangman0.png" />
             </image>
         </ImageView>
-        <Label fx:id="guessWord" layoutX="543.0" layoutY="260.0" prefHeight="88.0" prefWidth="594.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 60px;" text="kkkkkkkkkkkkkkkkkkkk">
+        <Label fx:id="guessWord" layoutX="543.0" layoutY="260.0" prefHeight="88.0" prefWidth="594.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 60px;">
             <font>
                 <Font name="Comcic Sans MS" size="30.0" />
             </font>
