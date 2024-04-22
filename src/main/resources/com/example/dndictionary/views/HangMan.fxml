@@ -57,9 +57,9 @@
                 <Font name="Comic Sans MS" size="30.0" />
             </font>
         </Label>
-        <TextArea fx:id="suggestBox" editable="false" layoutX="600.0" layoutY="401.0" prefHeight="108.0" prefWidth="478.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-wrap-text: true;" />
-        <TextField fx:id="guessChar" layoutX="635.0" layoutY="567.0" prefHeight="46.0" prefWidth="410.0" promptText="Enter the letter you guessed..." style="-fx-font-size: 20px;" styleClass="rounded-search-box" />
-          <Button id="functionButton" layoutX="788.0" layoutY="170.0" mnemonicParsing="false" onAction="#initializeQuestion" prefHeight="18.0" prefWidth="104.0" text="Replay">
+        <TextArea fx:id="suggestBox" editable="false" layoutX="631.0" layoutY="407.0" prefHeight="108.0" prefWidth="478.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-wrap-text: true;" />
+        <TextField fx:id="guessChar" layoutX="665.0" layoutY="568.0" prefHeight="46.0" prefWidth="410.0" promptText="Enter the letter you guessed..." style="-fx-font-size: 20px;" styleClass="rounded-search-box" />
+          <Button id="functionButton" fx:id="replayButton" layoutX="788.0" layoutY="170.0" mnemonicParsing="false" onAction="#initializeQuestion" prefHeight="18.0" prefWidth="104.0" text="Replay" visible="false">
          <font>
             <Font size="18.0" />
          </font>

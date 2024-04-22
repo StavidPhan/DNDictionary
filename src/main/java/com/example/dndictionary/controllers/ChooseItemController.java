@@ -2,11 +2,13 @@ package com.example.dndictionary.controllers;
 
 import com.example.dndictionary.game.ChooseItem;
 import com.example.dndictionary.game.Item;
+import com.example.dndictionary.game.MultipleChoiceQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -14,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.URL;
 
 import javafx.scene.control.Label;
 
@@ -30,6 +33,8 @@ public class ChooseItemController extends Controller {
     @FXML
     private ImageView imageView4;
     @FXML
+    private ImageView healthImage;
+    @FXML
     private Label questionBox;
     private Item correctItem;
     private Item[] items;
@@ -44,10 +49,60 @@ public class ChooseItemController extends Controller {
         chooseItem = ChooseItem.getChooseItem();
     }
 
+    public void showEndScene() throws IOException {
+        if (chooseItem.getHealth() <= 0) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "ChooseItemEnd.fxml"));
+            root = loader.load();
+
+            ChooseItemEndController chooseItemEndController = loader.getController();
+            chooseItemEndController.displayScore(chooseItem.getScore(), numberOfQuestions);
+
+            Stage currentStage = (Stage) questionBox.getScene().getWindow();
+            Scene scene = new Scene(root);
+            ApplicationColorController.setColor(scene);
+            scene.setFill(Color.TRANSPARENT);
+            currentStage.setScene(scene);
+            currentStage.show();
+        }
+    }
+
     public void correct() {
         correctLabel.setText("Correct!");
         chooseItem.increaseHighscore();
         scoreBox.setText(chooseItem.getScore() + "");
+    }
+
+    public void incorrect() throws IOException {
+        correctLabel.setText("Wrong!");
+        chooseItem.decreaseHealth();
+        int health = chooseItem.getHealth();
+        System.out.println(chooseItem.getHealth());
+
+        if (health <= 0) {
+            showEndScene();
+        } else {
+            updateImageHealth();
+        }
+    }
+
+    private void updateImageHealth() {
+        String imageName = "";
+        int health = chooseItem.getHealth();
+        if (health == 3) {
+            imageName = "/com/example/dndictionary/pictures/threeHeart.png";
+        } else if (health == 2) {
+            imageName = "/com/example/dndictionary/pictures/twoHeart.png";
+        } else if (health == 1) {
+            imageName = "/com/example/dndictionary/pictures/oneHeart.png";
+        }
+        URL imageUrl = getClass().getResource(imageName);
+        if (imageUrl != null) {
+            Image image = new Image(imageUrl.toExternalForm());
+            healthImage.setImage(image);
+            healthImage.setPreserveRatio(true); // Giữ nguyên tỷ lệ ảnh
+        } else {
+            System.err.println("Could not find image: " + imageName);
+        }
     }
 
     private boolean checkIfArrayIsNotFull(Item[] items) {
@@ -85,6 +140,8 @@ public class ChooseItemController extends Controller {
         questionBox.setText(correctItem.getQuestion());
     }
 
+
+    // when press button next question
     @FXML
     public void setQuestionByAction() {
         numberOfQuestions++;
@@ -118,39 +175,39 @@ public class ChooseItemController extends Controller {
     }
 
 
-    public void clickImageView1(MouseEvent event) {
+    public void clickImageView1(MouseEvent event) throws IOException {
         if (items[0] == correctItem) {
             correct();
             setQuestionByAction();
         } else {
-            correctLabel.setText("Incorrect");
+            incorrect();
         }
     }
 
-    public void clickImageView2(MouseEvent event) {
+    public void clickImageView2(MouseEvent event) throws IOException {
         if (items[1] == correctItem) {
             correct();
             setQuestionByAction();
         } else {
-            correctLabel.setText("Incorrect");
+            incorrect();
         }
     }
 
-    public void clickImageView3(MouseEvent event) {
+    public void clickImageView3(MouseEvent event) throws IOException {
         if (items[2] == correctItem) {
             correct();
             setQuestionByAction();
         } else {
-            correctLabel.setText("Incorrect");
+            incorrect();
         }
     }
 
-    public void clickImageView4(MouseEvent event) {
+    public void clickImageView4(MouseEvent event) throws IOException {
         if (items[3] == correctItem) {
             correct();
             setQuestionByAction();
         } else {
-            correctLabel.setText("Incorrect");
+            incorrect();
         }
     }
 

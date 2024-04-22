@@ -64,6 +64,21 @@ public class GameSceneController extends Controller implements Initializable {
     }
 
     @FXML
+    public void switchToHangManGameScene(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "HangMan.fxml"));
+        root = loader.load();
+
+        HangManController hangManController = loader.getController();
+        hangManController.initializeQuestion(event);
+
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        ApplicationColorController.setColor(scene);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
