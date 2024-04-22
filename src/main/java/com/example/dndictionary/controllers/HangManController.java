@@ -98,6 +98,7 @@ public class HangManController extends Controller {
         }
 
         if (word.completedWord()) {
+            replayButton.setVisible(true);
             gameStatus.setText("Congratulations! 🎉🎉🎉");
             guessChar.clear();
         }

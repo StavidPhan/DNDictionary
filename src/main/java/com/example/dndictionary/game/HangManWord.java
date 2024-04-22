@@ -9,7 +9,7 @@ public class HangManWord {
     public String word;
     public boolean[] list;
 
-    private static final int MAX_CHAR = 15;
+    private static final int MAX_CHAR = 25;
     public List<Character> listChar = new ArrayList<>();
     public boolean[] list1 = new boolean[MAX_CHAR];
     private int charCorrect = 0;
@@ -21,6 +21,17 @@ public class HangManWord {
             listChar.add(word.charAt(i));
         }
         randChar();
+    }
+
+    public void randChar() {
+        int k = MAX_CHAR - word.length();
+        Random rand = new Random();
+        for (int i = 0; i < k; i++) {
+            int n = rand.nextInt('z' - 'a');
+            char t = (char) ('a' + n);
+            listChar.add(t);
+        }
+        Collections.shuffle(listChar);
     }
 
     public String randGuessWord() {
@@ -39,29 +50,17 @@ public class HangManWord {
     }
     public String printInfoGraphic() {
         StringBuilder info = new StringBuilder();
-        info.append("Hint letters\n");
+        info.append("                           Hint letters\n");
 
-        for (int i = 0; i < MAX_CHAR; i++) {
-            if (!list1[i]) {
-                info.append(listChar.get(i)).append(" ");
-            } else {
+        for (int i = 0; i < listChar.size(); i++) {
+            if (list1[i]) {
                 info.append("* ");
+            } else {
+                info.append(listChar.get(i)).append(" ");
             }
         }
 
         return info.toString();
-    }
-
-
-    public void randChar() {
-        int k = MAX_CHAR - word.length();
-        Random rand = new Random();
-        for (int i = 0; i < k; i++) {
-            int n = rand.nextInt('z' - 'a');
-            char t = (char) ('a' + n);
-            listChar.add(t);
-        }
-        Collections.shuffle(listChar);
     }
 
     public boolean checkAnswers(char answers) {
