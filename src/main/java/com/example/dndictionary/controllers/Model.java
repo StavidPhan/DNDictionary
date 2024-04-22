@@ -1,5 +1,6 @@
 package com.example.dndictionary.controllers;
 import com.example.dndictionary.Word;
+import com.example.dndictionary.UserDefinedWord;
 import com.example.dndictionary.Utilities;
 import java.sql.*;
 
