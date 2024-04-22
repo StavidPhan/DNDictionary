@@ -5,18 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/oneHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/threeHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/twoHeart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangMan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangMan.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +56,7 @@
     "Maven.DNDictionary [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "tabAddNewWord",
+    "git-widget-placeholder": "hangmanGame",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -69,6 +64,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -77,6 +73,13 @@
       <recent name="D:\codeLearn\java_app\javaFX\DNDictionary\src\main\resources\com\example\dndictionary\views" />
       <recent name="D:\codeLearn\java_app\javaFX\DNDictionary\src\main\resources\com\example\dndictionary\pictures" />
     </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -88,7 +91,8 @@
       <updated>1710687235300</updated>
       <workItem from="1710687236370" duration="1435000" />
       <workItem from="1710747196370" duration="322000" />
-      <workItem from="1713620034007" duration="13471000" />
+      <workItem from="1713620034007" duration="32491000" />
+      <workItem from="1713765875098" duration="6989000" />
     </task>
     <servers />
   </component>
