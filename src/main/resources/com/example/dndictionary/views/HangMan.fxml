@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="mcAnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.HangManController">
+    <children>
+        <GridPane id="mcGridPane1" prefHeight="54.0" prefWidth="1280.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button id="functionButton" mnemonicParsing="false" onAction="#switchBackToGameScene" prefHeight="34.0" prefWidth="46.0" text="Back" />
+                <Label id="mcText" text="Score:" GridPane.columnIndex="1" />
+                <Label id="mcText" fx:id="scoreBox" text="0" GridPane.columnIndex="1">
+                    <padding>
+                        <Insets left="70.0" />
+                    </padding>
+                </Label>
+                <Label id="mcText" fx:id="resultBox" text="Correct?" GridPane.columnIndex="2" />
+                <Button id="functionButton" mnemonicParsing="false" onAction="#end" text="Quit game" GridPane.columnIndex="4">
+                    <GridPane.margin>
+                        <Insets left="150.0" />
+                    </GridPane.margin>
+                </Button>
+            </children>
+        </GridPane>
+        <ImageView fx:id="healthImage" fitHeight="551.0" fitWidth="323.0" layoutX="92.0" layoutY="166.0" preserveRatio="true" GridPane.columnIndex="2">
+            <image>
+                <Image url="@../pictures/hangman0.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="guessWord" layoutX="543.0" layoutY="260.0" prefHeight="88.0" prefWidth="594.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 60px;">
+            <font>
+                <Font name="Comcic Sans MS" size="30.0" />
+            </font>
+        </Label>
+        <Label fx:id="gameStatus" layoutX="558.0" layoutY="113.0" prefHeight="45.0" prefWidth="563.0" style="-fx-background-color: transparent; -fx-padding: 0; -fx-alignment: center; -fx-font-size: 30px; -fx-wrap-text: true; -fx-text-fill: red;">
+            <font>
+                <Font name="Comic Sans MS" size="30.0" />
+            </font>
+        </Label>
+        <TextArea fx:id="suggestBox" editable="false" layoutX="600.0" layoutY="401.0" prefHeight="108.0" prefWidth="478.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-wrap-text: true;" />
+        <TextField fx:id="guessChar" layoutX="635.0" layoutY="567.0" prefHeight="46.0" prefWidth="410.0" promptText="Enter the letter you guessed..." style="-fx-font-size: 20px;" styleClass="rounded-search-box" />
+          <Button id="functionButton" layoutX="788.0" layoutY="170.0" mnemonicParsing="false" onAction="#initializeQuestion" prefHeight="18.0" prefWidth="104.0" text="Replay">
+         <font>
+            <Font size="18.0" />
+         </font>
+          </Button>
+    </children>
+</AnchorPane>
