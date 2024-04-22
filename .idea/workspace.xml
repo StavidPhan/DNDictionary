@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/hangman9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/HangManController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangMan.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/HangMan.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +48,7 @@
     "Maven.DNDictionary [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "hangmanGame",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -93,6 +85,7 @@
       <workItem from="1710747196370" duration="322000" />
       <workItem from="1713620034007" duration="32491000" />
       <workItem from="1713765875098" duration="6989000" />
+      <workItem from="1713792178788" duration="35000" />
     </task>
     <servers />
   </component>
