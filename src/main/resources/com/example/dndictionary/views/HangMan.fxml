@@ -9,12 +9,6 @@
 
 <AnchorPane id="mcAnchorPane" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.HangManController">
     <children>
-        <ImageView fx:id="imageView" fitHeight="720.0" fitWidth="1278.0" layoutX="1.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true" styleClass="rounded-search-box" />
-<!--        <Label id="mcQuestion" fx:id="questionBox" layoutX="220.0" layoutY="190.0" prefHeight="188.0" prefWidth="935.0" text="QuestionBox">-->
-<!--            <font>-->
-<!--                <Font name="Comic Sans MS" size="23.0" />-->
-<!--            </font>-->
-<!--        </Label>-->
         <GridPane id="mcGridPane1" prefHeight="54.0" prefWidth="1280.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
