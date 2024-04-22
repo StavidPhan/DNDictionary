@@ -1,7 +1,9 @@
 package com.example.dndictionary.controllers;
 import com.example.dndictionary.apiservice.TranslateAPI;
-import com.example.dndictionary.Word;
+
 import com.example.dndictionary.Utilities;
+import com.example.dndictionary.Word;
+import com.example.dndictionary.UserDefinedWord;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

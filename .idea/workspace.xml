@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="Merge pull request #9 from StavidPhan/tabAddNewWord&#10;&#10;add health function to games" />
+    <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="Merge remote-tracking branch 'origin/nam_Translate' into nam_Translate">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +25,12 @@
       <list>
         <option value="Phan Thanh Duy &lt;97877417+stavidphan@users.noreply.github.com&gt;" />
       </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -120,7 +128,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713812588661</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge pull request #9 from StavidPhan/tabAddNewWord&#10;&#10;add health function to games">
+      <option name="closed" value="true" />
+      <created>1713812700127</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713812700127</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/nam_Translate' into nam_Translate">
+      <option name="closed" value="true" />
+      <created>1713812917226</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713812917226</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Merge pull request #9 from StavidPhan/tabAddNewWord&#10;&#10;add health function to games" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge pull request #9 from StavidPhan/tabAddNewWord&#10;&#10;add health function to games" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/nam_Translate' into nam_Translate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/nam_Translate' into nam_Translate" />
   </component>
 </project>
