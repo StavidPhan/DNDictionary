@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -27,9 +28,7 @@ public class HangManController extends Controller {
     @FXML
     public Label guessWord;
     @FXML
-    public Label gameOver;
-    @FXML
-    public Label correctWord;
+    public Label gameStatus;
     @FXML
     public TextField guessChar;
     @FXML
@@ -38,6 +37,8 @@ public class HangManController extends Controller {
     private Label scoreBox;
     @FXML
     private ImageView healthImage;
+    @FXML
+    private Button replayButton;
 
     private HangMan hangman = new HangMan();
     HangManWord word = new HangManWord(hangman.randWord());
@@ -75,8 +76,10 @@ public class HangManController extends Controller {
 
             if (hangman.getHealth() <= 0) {
                 updateImageHealth();
-                gameOver.setText("GAME OVER!");
-                correctWord.setText("Correct word: " + word.word);
+                replayButton.setVisible(true);
+                gameStatus.setText("GAME OVER!");
+                guessWord.setText(word.word);
+                guessWord.setStyle(guessWord.getStyle() + "-fx-text-fill: #00ff00;");
                 guessChar.clear();
             } else {
                 updateImageHealth();
@@ -95,22 +98,52 @@ public class HangManController extends Controller {
         }
 
         if (word.completedWord()) {
-            correctWord.setText("Congratulations! 🎉🎉🎉");
+            gameStatus.setText("Congratulations! 🎉🎉🎉");
             guessChar.clear();
         }
     }
 
     private void updateImageHealth() {
         String imageName = "";
+        String pictures_path = "/com/example/dndictionary/pictures/";
         int health = hangman.getHealth();
-        if (health == 3) {
-            imageName = "/com/example/dndictionary/pictures/threeHeart.png";
-        } else if (health == 2) {
-            imageName = "/com/example/dndictionary/pictures/twoHeart.png";
-        } else if (health == 1) {
-            imageName = "/com/example/dndictionary/pictures/oneHeart.png";
+        switch (health) {
+            case 10:
+                imageName = "hangman0.png";
+                break;
+            case 9:
+                imageName = "hangman1.png";
+                break;
+            case 8:
+                imageName = "hangman2.png";
+                break;
+            case 7:
+                imageName = "hangman3.png";
+                break;
+            case 6:
+                imageName = "hangman4.png";
+                break;
+            case 5:
+                imageName = "hangman5.png";
+                break;
+            case 4:
+                imageName = "hangman6.png";
+                break;
+            case 3:
+                imageName = "hangman7.png";
+                break;
+            case 2:
+                imageName = "hangman8.png";
+                break;
+            case 1:
+                imageName = "hangman9.png";
+                break;
+            case 0:
+                imageName = "hangman10.png";
+                break;
         }
-        URL imageUrl = getClass().getResource(imageName);
+
+        URL imageUrl = getClass().getResource(pictures_path + imageName);
         if (imageUrl != null) {
             Image image = new Image(imageUrl.toExternalForm());
             healthImage.setImage(image);
@@ -126,11 +159,11 @@ public class HangManController extends Controller {
             guessWord.setText(word.randGuessWord());
             suggestBox.setText(word.printInfoGraphic());
         }
-        hangman.setHealth(3);
+        hangman.setHealth(10);
         hangman.setScore(0);
+        guessWord.setStyle(guessWord.getStyle().replace("-fx-text-fill: #00ff00;", ""));
         updateImageHealth();
-        gameOver.setText("");
-        correctWord.setText("");
+        gameStatus.setText("");
     }
 
     @FXML
