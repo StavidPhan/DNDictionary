@@ -29,6 +29,19 @@ public class ChooseItem extends Game {
         chooseItem.addItem("book", PICTURES_PATH + "book.png");
         chooseItem.addItem("dog", PICTURES_PATH + "dog.png");
         chooseItem.addItem("pickaxe", PICTURES_PATH + "pickaxe.png");
+        chooseItem.addItem("cat", PICTURES_PATH + "cat.png");
+        chooseItem.addItem("chair", PICTURES_PATH + "chair.png");
+        chooseItem.addItem("computer", PICTURES_PATH + "computer.png");
+        chooseItem.addItem("hotpot", PICTURES_PATH + "hotpot.png");
+        chooseItem.addItem("car", PICTURES_PATH + "car.png");
+        chooseItem.addItem("lake", PICTURES_PATH + "lake.png");
+        chooseItem.addItem("mouse", PICTURES_PATH + "mouse.png");
+        chooseItem.addItem("banana", PICTURES_PATH + "banana.png");
+        chooseItem.addItem("pig", PICTURES_PATH + "pig.png");
+        chooseItem.addItem("fan", PICTURES_PATH + "fan.png");
+        chooseItem.addItem("board", PICTURES_PATH + "board.png");
+        chooseItem.addItem("glasses", PICTURES_PATH + "glasses.png");
+        chooseItem.addItem("bottle", PICTURES_PATH + "bottle.png");
 
         return chooseItem;
     }
