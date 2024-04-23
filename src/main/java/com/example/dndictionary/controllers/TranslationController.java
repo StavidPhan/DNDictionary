@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
+import static com.example.dndictionary.Utilities.VIEWS_PATH;
 
 public class TranslationController extends Controller implements Initializable {
     @FXML
@@ -85,7 +86,7 @@ public class TranslationController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource("SidePane.fxml"));
+        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH +"SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
             rootAnchor.getChildren().addAll(sidePaneLoaded);
