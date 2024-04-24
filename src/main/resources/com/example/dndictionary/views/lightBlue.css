@@ -100,6 +100,12 @@
     -fx-cursor: hand;
     -fx-background-radius: 15;
 }
+.title{
+     -fx-background-color:   #3C91E6;
+     -fx-effect: dropshadow(three-pass-box, #8ce67a, 10, 0, 0, 0);
+     -fx-background-radius: 5;
+     -fx-border-radius: 5;
+}
 
 #accentBox .context-menu {
     -fx-background-color: -secondary-color;

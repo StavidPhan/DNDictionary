@@ -7,6 +7,7 @@ import com.example.dndictionary.UserDefinedWord;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +15,11 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
+import java.io.BufferedReader;
+
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,6 +51,10 @@ public class TranslationController extends Controller implements Initializable {
     private TableColumn<Record, String> targetText;
     @FXML
     private Button closeButton;
+    @FXML
+    private Button sound1;
+    @FXML
+    private Button sound2;
 
     private ObservableList<Record> history = FXCollections.observableArrayList();
 
@@ -86,7 +96,7 @@ public class TranslationController extends Controller implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH +"SidePane.fxml"));
+        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
             rootAnchor.getChildren().addAll(sidePaneLoaded);
@@ -117,6 +127,8 @@ public class TranslationController extends Controller implements Initializable {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        sound1.setOnAction(event -> speakText(inputArea.getText()));
+        sound2.setOnAction(event -> speakText(outputArea.getText()));
 
         records.setItems(history);
     }
@@ -144,5 +156,25 @@ public class TranslationController extends Controller implements Initializable {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
+
+
+
+    @FXML
+
+    private void speakText(String text) {
+        // Khởi tạo FreeTTS
+        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+        Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+
+        // Kiểm tra nếu có giọng nói
+        if (voice != null) {
+            voice.allocate();
+            voice.speak(text); // Phát âm văn bản
+        } else {
+            System.err.println("Cannot find voice: kevin16");
+        }
+    }
+
+
 
 }

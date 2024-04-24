@@ -37,6 +37,7 @@ public class TranslateAPI implements APIService<String> {
      * @return return translated text from API
      */
     @Override
+
     public String getData() {
         input = URLEncoder.encode(input , StandardCharsets.UTF_8);
 
