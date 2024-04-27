@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -9,51 +10,43 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane id="rootAnchorPane" fx:id="rootAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.TranslationController">
    <children>
-      <AnchorPane layoutX="299.0" layoutY="32.0" prefHeight="54.0" prefWidth="907.0" styleClass="title" stylesheets="@lightBlue.css">
+      <AnchorPane layoutX="297.0" layoutY="10.0" prefHeight="57.0" prefWidth="907.0" styleClass="title" stylesheets="@lightBlue.css">
          <children>
-      
-            <Button fx:id="sound2" layoutX="479.0" layoutY="14.0" mnemonicParsing="false" text="🔊" />
-            <Button fx:id="sound1" layoutX="98.0" layoutY="14.0" mnemonicParsing="false" text="🔊" />
-         </children></AnchorPane>
-      <HBox layoutX="299.0" layoutY="87.0" prefHeight="249.0" prefWidth="907.0" AnchorPane.bottomAnchor="384.20000000000005" AnchorPane.leftAnchor="299.0" AnchorPane.rightAnchor="74.60000000000014" AnchorPane.topAnchor="87.0">
+            <Button fx:id="sound1" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" text="🔊" />
+            <Button fx:id="sound2" layoutX="528.0" layoutY="16.0" mnemonicParsing="false" text="🔊" />
+         </children>
+      </AnchorPane>
+      <HBox layoutX="298.4" layoutY="67.0" prefHeight="249.0" prefWidth="907.0" AnchorPane.bottomAnchor="404.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="67.0">
          <children>
             <TextArea fx:id="inputArea" onKeyReleased="#countChar" prefHeight="200.0" prefWidth="500.0" />
             <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="500.0" />
          </children>
       </HBox>
-      <Button id="gameButton" fx:id="translateButton" layoutX="707.0" layoutY="344.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
-      <Label fx:id="sourceLabel" layoutX="451.0" layoutY="45.0" prefHeight="30.0" prefWidth="164.0" text="Label" textFill="#faeded">
-         <font>
-            <Font size="14.0" />
-         </font></Label>
-      <Label fx:id="targetLabel" layoutX="836.0" layoutY="44.0" prefHeight="30.0" prefWidth="147.0" text="Label">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Button id="gameButton" layoutX="718.0" layoutY="150.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="46.0" prefWidth="60.0">
+      <Button id="gameButton" fx:id="translateButton" layoutX="698.0" layoutY="338.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
+      <ComboBox fx:id="comboBox1" layoutX="438.0" layoutY="21.0" prefHeight="31.0" prefWidth="157.0" promptText="Choose Language" />
+      <ComboBox fx:id="comboBox2" layoutX="920.0" layoutY="26.0" prefWidth="150.0" promptText="Choose Language" visibleRowCount="15" />
+      <Button id="gameButton" layoutX="709.0" layoutY="150.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="58.0" prefWidth="47.0">
          <graphic>
-            <ImageView fitHeight="37.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../pictures/Swap.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="numOfCharLabel" layoutX="309.0" layoutY="345.0" text="Count Char" />
-      <TableView fx:id="records" layoutX="288.0" layoutY="466.0" prefHeight="223.0" prefWidth="924.0">
+      <Label fx:id="numOfCharLabel" layoutX="300.0" layoutY="316.0" text="Count Char" />
+      <TableView fx:id="records" layoutX="300.0" layoutY="432.0" prefHeight="223.0" prefWidth="924.0">
          <columns>
             <TableColumn fx:id="sourceLanguage" prefWidth="120.0" text="Source" />
             <TableColumn fx:id="targetLanguage" prefWidth="120.0" text="Target" />
-            <TableColumn fx:id="targetText" prefWidth="341.0" text="Target Text" />
             <TableColumn fx:id="sourceText" prefWidth="341.0" text="Source Text" />
+            <TableColumn fx:id="targetText" prefWidth="341.0" text="Target Text" />
          </columns>
       </TableView>
-      <Button id="gameButton" layoutX="327.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteHistory" text="Clear History" />
+      <Button id="gameButton" layoutX="297.0" layoutY="378.0" mnemonicParsing="false" onAction="#deleteHistory" text="Clear History" />
       <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="47.0" text="X" />
    </children>
 </AnchorPane>

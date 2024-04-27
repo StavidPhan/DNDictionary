@@ -1,7 +1,14 @@
 package com.example.dndictionary.apiservice;
 
+import com.google.gson.*;
+
+import javax.speech.synthesis.Voice;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URI;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -37,37 +44,34 @@ public class TranslateAPI implements APIService<String> {
      * @return return translated text from API
      */
     @Override
-
     public String getData() {
-        input = URLEncoder.encode(input , StandardCharsets.UTF_8);
-
-        String language;
-        if (source.equals("English")) {
-            language = "&target=vi&source=en";
-        } else if (source.equals("Chinese")) {
-            language = "&target=vi&source=zh";
-        } else if (source.equals("French")) {
-            language = "&target=vi&source=fr";
-        } else {
-            language = "&target=en&source=vi";
-        }
-
+        String translation = "";
         try {
+            String url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + source +
+                    "&tl=" + target + "&dt=t&q=" + URLEncoder.encode(input, "UTF-8");
+            HttpURLConnection httpClient = (HttpURLConnection) new URL(url).openConnection();
+            httpClient.setRequestMethod("GET");
 
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create("https://google-translate1.p.rapidapi.com/language/translate/v2"))
-                    .header("content-type", "application/x-www-form-urlencoded")
-                    .header("Accept-Encoding", "application/gzip")
-                    .header("X-RapidAPI-Key", "917d80f0d6msh6983d78e51b0189p19a167jsnee9220e7fdbd")
-                    .header("X-RapidAPI-Host", "google-translate1.p.rapidapi.com")
-                    .method("POST", HttpRequest.BodyPublishers.ofString("q=" + input + language))
-                    .build();
-            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            result = response.body().split("\\:")[3].replace("\"}]}}", "").replace("\"", "");
-        } catch (IOException | InterruptedException e) {
-            System.out.println(e.getMessage());
+            BufferedReader reader = new BufferedReader(new InputStreamReader(httpClient.getInputStream()));
+            String result = reader.readLine();
+            reader.close();
+
+            JsonArray jsonData = JsonParser.parseString(result).getAsJsonArray();
+            JsonArray translationItems = jsonData.get(0).getAsJsonArray();
+
+            for (JsonElement item : translationItems) {
+                String translationLine = item.getAsJsonArray().get(0).getAsString();
+                translation += " " + translationLine;
+            }
+
+            if (translation.length() > 1) {
+                translation = translation.substring(1);
+            }
+        } catch (IOException | JsonIOException | JsonSyntaxException e) {
+            e.printStackTrace();
         }
-
-        return result;
+        return translation;
     }
+
+
 }

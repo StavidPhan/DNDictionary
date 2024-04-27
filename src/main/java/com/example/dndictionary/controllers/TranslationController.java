@@ -4,10 +4,11 @@ import com.example.dndictionary.apiservice.TranslateAPI;
 import com.example.dndictionary.Utilities;
 import com.example.dndictionary.Word;
 import com.example.dndictionary.UserDefinedWord;
+import com.sun.speech.freetts.Voice;
+import com.sun.speech.freetts.VoiceManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,11 +16,6 @@ import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import com.sun.speech.freetts.Voice;
-import com.sun.speech.freetts.VoiceManager;
-import java.io.BufferedReader;
-
-
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,14 +24,39 @@ import java.util.ResourceBundle;
 import static com.example.dndictionary.Utilities.VIEWS_PATH;
 
 public class TranslationController extends Controller implements Initializable {
+    enum Language {
+        English("Tiếng Anh", "en"),
+        Vietnamese("Tiếng Việt", "vi"),
+        Chinese("Tiếng Trung", "zh-tw"),
+        French("Tiếng Pháp", "fr"),
+        AutoDetect("Phát hiện ngôn ngữ", "auto");
+
+        private final String displayName;
+        private final String code;
+
+        Language(String displayName, String code) {
+            this.displayName = displayName;
+            this.code = code;
+        }
+
+        public String getDisplayName() {
+            return displayName;
+        }
+
+        public String getCode() {
+            return code;
+        }
+    }
+
+
     @FXML
     private TextArea inputArea;
     @FXML
     private TextArea outputArea;
     @FXML
-    private Label sourceLabel;
+    private ComboBox<Language> comboBox1;
     @FXML
-    private Label targetLabel;
+    private ComboBox<Language> comboBox2;
     @FXML
     private Label numOfCharLabel;
     private TranslateAPI translateAPI;
@@ -50,19 +71,21 @@ public class TranslationController extends Controller implements Initializable {
     @FXML
     private TableColumn<Record, String> targetText;
     @FXML
+    private Button translateButton;
+    @FXML
     private Button closeButton;
     @FXML
     private Button sound1;
     @FXML
     private Button sound2;
 
+    String lang_first;
+    String lang_second;
+
     private ObservableList<Record> history = FXCollections.observableArrayList();
 
     public void init() {
-        this.sourceLabel.setText("English");
-        this.targetLabel.setText("Vietnamese");
         this.numOfCharLabel.setText("0/5000");
-
     }
 
     @FXML
@@ -73,13 +96,15 @@ public class TranslationController extends Controller implements Initializable {
         }
 
         outputArea.setText("Translating...");
-        translateAPI = new TranslateAPI(inputArea.getText(), sourceLabel.getText(), targetLabel.getText());
+        translateAPI = new TranslateAPI(inputArea.getText(), lang_first, lang_second);
         new Thread(() -> {
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1);
                 outputArea.setText(translateAPI.getData());
-                Model.addTranslationHistory(sourceLabel.getText(), targetLabel.getText(), inputArea.getText(), outputArea.getText());
-                history.add(new Record(sourceLabel.getText(), targetLabel.getText(), inputArea.getText(), outputArea.getText()));
+                Language sourceLanguage = comboBox1.getSelectionModel().getSelectedItem();
+                Language targetLanguage = comboBox2.getSelectionModel().getSelectedItem();
+                Model.addTranslationHistory(sourceLanguage.getDisplayName(), targetLanguage.getDisplayName(), inputArea.getText(), outputArea.getText());
+                history.add(new Record(sourceLanguage.getDisplayName(), targetLanguage.getDisplayName(), inputArea.getText(), outputArea.getText()));
                 records.setItems(history);
             } catch (InterruptedException e) {
                 System.out.println(e.getMessage());
@@ -89,14 +114,16 @@ public class TranslationController extends Controller implements Initializable {
 
     @FXML
     public void swapLanguage() {
-        String temp = sourceLabel.getText();
-        sourceLabel.setText(targetLabel.getText());
-        targetLabel.setText(temp);
+        Language sourceLanguage = comboBox1.getSelectionModel().getSelectedItem();
+        Language targetLanguage = comboBox2.getSelectionModel().getSelectedItem();
+
+        comboBox1.getSelectionModel().select(targetLanguage);
+        comboBox2.getSelectionModel().select(sourceLanguage);
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SidePane.fxml"));
+        FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH +"SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
             rootAnchor.getChildren().addAll(sidePaneLoaded);
@@ -108,6 +135,20 @@ public class TranslationController extends Controller implements Initializable {
         targetLanguage.setCellValueFactory(new PropertyValueFactory<Record, String>("targetLanguage"));
         sourceText.setCellValueFactory(new PropertyValueFactory<Record, String>("sourceText"));
         targetText.setCellValueFactory(new PropertyValueFactory<Record, String>("targetText"));
+
+        ObservableList<Language> list = FXCollections.observableArrayList(Language.values());
+        comboBox1.setItems(list);
+        comboBox2.setItems(list);
+
+        comboBox1.setOnAction(this::handleComboBox1Action);
+        comboBox2.setOnAction(this::handleComboBox2Action);
+
+        inputArea.textProperty().addListener((observable, oldValue, newValue) -> {
+            translateButton.setDisable(newValue.trim().isEmpty());
+        });
+
+        translateButton.setDisable(true);
+        outputArea.setEditable(false);
 
         Statement statement = null;
         ResultSet resultSet = null;
@@ -127,10 +168,27 @@ public class TranslationController extends Controller implements Initializable {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        sound1.setOnAction(event -> speakText(inputArea.getText()));
-        sound2.setOnAction(event -> speakText(outputArea.getText()));
+        sound1.setOnAction(event -> speak(inputArea.getText()));
+        sound2.setOnAction(event -> speak(outputArea.getText()));
+
 
         records.setItems(history);
+    }
+
+    @FXML
+    private void handleComboBox1Action(ActionEvent event) {
+        Language selectedLanguage = comboBox1.getSelectionModel().getSelectedItem();
+        if (selectedLanguage != null) {
+            lang_first = selectedLanguage.getCode();
+        }
+    }
+
+    @FXML
+    private void handleComboBox2Action(ActionEvent event) {
+        Language selectedLanguage = comboBox2.getSelectionModel().getSelectedItem();
+        if (selectedLanguage != null) {
+            lang_second = selectedLanguage.getCode();
+        }
     }
 
     @FXML
@@ -159,22 +217,20 @@ public class TranslationController extends Controller implements Initializable {
 
 
 
-    @FXML
 
-    private void speakText(String text) {
-        // Khởi tạo FreeTTS
-        System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
-        Voice voice = VoiceManager.getInstance().getVoice("kevin16");
+        public void speak(String text) {
+            // Khởi tạo FreeTTS
+            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
+            Voice voice = VoiceManager.getInstance().getVoice("kevin16");
 
-        // Kiểm tra nếu có giọng nói
-        if (voice != null) {
-            voice.allocate();
-            voice.speak(text); // Phát âm văn bản
-        } else {
-            System.err.println("Cannot find voice: kevin16");
+            // Kiểm tra nếu có giọng nói
+            if (voice != null) {
+                voice.allocate();
+                voice.speak(text); // Phát âm văn bản
+            } else {
+                System.err.println("Cannot find voice: kevin16");
+            }
         }
-    }
-
 
 
 }
