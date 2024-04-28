@@ -20,7 +20,7 @@ public class MultipleChoiceEndController extends Controller {
     private Label emotionBox;
 
     @FXML
-    public void switchToGameScene(ActionEvent event) throws IOException {
+    public void switchToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
 
@@ -42,7 +42,7 @@ public class MultipleChoiceEndController extends Controller {
     }
 
     @FXML
-    public void replay(ActionEvent event) throws IOException {
+    public void replay(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "MultipleChoiceScene.fxml"));
         root = loader.load();
 
