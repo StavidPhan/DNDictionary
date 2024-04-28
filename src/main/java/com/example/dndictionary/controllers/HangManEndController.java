@@ -42,7 +42,7 @@ public class HangManEndController extends Controller {
     }
 
     @FXML
-    public void replay(ActionEvent event) throws IOException {
+    public void replay(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "HangMan.fxml"));
         root = loader.load();
 
