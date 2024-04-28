@@ -145,7 +145,7 @@ public class SettingSceneController extends Controller implements Initializable 
     }
 
     @FXML
-    public void changeTheme(ActionEvent event) throws IOException {
+    public void changeTheme(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         // switch to dark theme
         if (theme.equals("LIGHT")) {
             theme = "DARK";
@@ -177,7 +177,7 @@ public class SettingSceneController extends Controller implements Initializable 
     }
 
     @FXML
-    public void handleRating(MouseEvent event) {
+    public void handleRating(@SuppressWarnings("exports") MouseEvent event) {
         System.out.println(rating.getRating());
         String labelString = "User Rating: " + 5.0;
         if (rating.getRating() == 5) labelString += " thank you";
@@ -187,7 +187,7 @@ public class SettingSceneController extends Controller implements Initializable 
     }
 
     @FXML
-    public void handleCloseButtonAction(ActionEvent event) {
+    public void handleCloseButtonAction(@SuppressWarnings("exports") ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
