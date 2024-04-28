@@ -20,7 +20,7 @@ public class HangManEndController extends Controller {
     private Label emotionBox;
 
     @FXML
-    public void switchToGameScene(ActionEvent event) throws IOException {
+    public void switchToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
 
