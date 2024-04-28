@@ -10,35 +10,50 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane id="rootAnchorPane" fx:id="rootAnchor" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dndictionary.controllers.TranslationController">
    <children>
-      <AnchorPane layoutX="297.0" layoutY="10.0" prefHeight="57.0" prefWidth="907.0" styleClass="title" stylesheets="@lightBlue.css">
+      <AnchorPane layoutX="307.0" layoutY="30.0" prefHeight="57.0" prefWidth="907.0" styleClass="title" stylesheets="@lightBlue.css">
          <children>
-            <Button fx:id="sound1" layoutX="51.0" layoutY="16.0" mnemonicParsing="false" text="🔊" />
-            <Button fx:id="sound2" layoutX="528.0" layoutY="16.0" mnemonicParsing="false" text="🔊" />
+            <Button id="speakButton" fx:id="sound1" layoutX="51.0" layoutY="9.0" mnemonicParsing="false" text="🔊">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button id="speakButton" fx:id="sound2" layoutX="526.0" layoutY="9.0" mnemonicParsing="false" text="🔊">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="comboBox1" layoutX="143.0" layoutY="13.0" prefHeight="31.0" prefWidth="157.0" promptText="Choose Language" style="-fx-background-radius: 15px;" />
+            <ComboBox fx:id="comboBox2" layoutX="648.0" layoutY="13.0" prefHeight="31.0" prefWidth="157.0" promptText="Choose Language" style="-fx-background-radius: 15px;" />
          </children>
       </AnchorPane>
-      <HBox layoutX="298.4" layoutY="67.0" prefHeight="249.0" prefWidth="907.0" AnchorPane.bottomAnchor="404.0" AnchorPane.leftAnchor="298.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="67.0">
+      <HBox layoutX="307.2" layoutY="88.0" prefHeight="248.0" prefWidth="907.0" AnchorPane.bottomAnchor="384.0" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="66.0" AnchorPane.topAnchor="88.0">
          <children>
-            <TextArea fx:id="inputArea" onKeyReleased="#countChar" prefHeight="200.0" prefWidth="500.0" />
-            <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="500.0" />
+            <TextArea fx:id="inputArea" onKeyReleased="#countChar" prefHeight="200.0" prefWidth="500.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
+            <TextArea fx:id="outputArea" prefHeight="200.0" prefWidth="500.0">
+               <font>
+                  <Font size="18.0" />
+               </font></TextArea>
          </children>
       </HBox>
-      <Button id="gameButton" fx:id="translateButton" layoutX="698.0" layoutY="338.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
-      <ComboBox fx:id="comboBox1" layoutX="438.0" layoutY="21.0" prefHeight="31.0" prefWidth="157.0" promptText="Choose Language" />
-      <ComboBox fx:id="comboBox2" layoutX="920.0" layoutY="26.0" prefWidth="150.0" promptText="Choose Language" visibleRowCount="15" />
-      <Button id="gameButton" layoutX="709.0" layoutY="150.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="58.0" prefWidth="47.0">
+      <Button id="gameButton" fx:id="translateButton" layoutX="710.0" layoutY="348.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
+      <Button id="gameButton" layoutX="735.0" layoutY="191.0" mnemonicParsing="false" onAction="#swapLanguage" prefHeight="15.0" prefWidth="40.0">
          <graphic>
-            <ImageView fitHeight="44.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../pictures/Swap.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Label fx:id="numOfCharLabel" layoutX="300.0" layoutY="316.0" text="Count Char" />
-      <TableView fx:id="records" layoutX="300.0" layoutY="432.0" prefHeight="223.0" prefWidth="924.0">
+      <Label fx:id="numOfCharLabel" layoutX="307.0" layoutY="338.0" text="Count Char" />
+      <TableView fx:id="records" layoutX="308.0" layoutY="452.0" prefHeight="223.0" prefWidth="907.0">
          <columns>
             <TableColumn fx:id="sourceLanguage" prefWidth="120.0" text="Source" />
             <TableColumn fx:id="targetLanguage" prefWidth="120.0" text="Target" />
@@ -46,7 +61,8 @@
             <TableColumn fx:id="targetText" prefWidth="341.0" text="Target Text" />
          </columns>
       </TableView>
-      <Button id="gameButton" layoutX="297.0" layoutY="378.0" mnemonicParsing="false" onAction="#deleteHistory" text="Clear History" />
+      <Button id="gameButton" layoutX="307.0" layoutY="404.0" mnemonicParsing="false" onAction="#deleteHistory" prefHeight="18.0" prefWidth="100.0" style="-fx-font-size: 13px" text="Clear History">
+      </Button>
       <Button fx:id="closeButton" layoutX="1233.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="30.0" prefWidth="47.0" text="X" />
    </children>
 </AnchorPane>
