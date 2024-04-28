@@ -73,7 +73,7 @@ public class MultipleChoiceController extends Controller {
 
     // when press button next question
     @FXML
-    public void setQuestion(ActionEvent event) throws IOException {
+    public void setQuestion(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         if (numberOfQuestionsUsed == multipleChoice.getNumberOfQuestions() || multipleChoice.getHealth() <= 0) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "MultipleChoiceEnd.fxml"));
             root = loader.load();
@@ -182,7 +182,7 @@ public class MultipleChoiceController extends Controller {
     }
 
     @FXML
-    public void switchBackToGameScene(ActionEvent event) throws IOException {
+    public void switchBackToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
 
@@ -195,7 +195,7 @@ public class MultipleChoiceController extends Controller {
     }
 
     @FXML
-    public void end(ActionEvent event) throws IOException {
+    public void end(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "MultipleChoiceEnd.fxml"));
         root = loader.load();
 
