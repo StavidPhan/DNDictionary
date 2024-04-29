@@ -2,6 +2,7 @@ module com.example.dndictionary {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.sql;
+    requires java.base;
     requires freetts;
     requires java.net.http;
     requires org.controlsfx.controls;

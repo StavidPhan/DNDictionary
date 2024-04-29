@@ -51,7 +51,7 @@ public class SidePaneController extends Controller implements Initializable {
     }
 
     @FXML
-    public void switchToMainScene(ActionEvent event) throws IOException {
+    public void switchToMainScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         currentScene = SCENE.WELCOME_SCENE;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "WelcomeScene.fxml"));
         root = fxmlLoader.load();
@@ -64,7 +64,7 @@ public class SidePaneController extends Controller implements Initializable {
     }
 
     @FXML
-    public void switchToAddWordScene(ActionEvent event) throws IOException {
+    public void switchToAddWordScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         currentScene = SCENE.ADD_NEW_WORD_SCENE;
         FXMLLoader wordSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "AddNewWordScene.fxml"));
         root = wordSceneLoader.load();
@@ -82,7 +82,7 @@ public class SidePaneController extends Controller implements Initializable {
      * ATTENTION: this function is also used in class MultipleChoiceEndController.
      */
     @FXML
-    public void switchToGameScene(ActionEvent event) throws IOException {
+    public void switchToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         currentScene = SCENE.GAME_SCENE;
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
@@ -96,7 +96,7 @@ public class SidePaneController extends Controller implements Initializable {
     }
 
     @FXML
-    public void switchToSettingScene(ActionEvent event) throws IOException {
+    public void switchToSettingScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         currentScene = SCENE.SETTING_SCENE;
         FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SettingScene.fxml"));
         root = settingSceneLoader.load();
@@ -110,7 +110,7 @@ public class SidePaneController extends Controller implements Initializable {
     }
 
     @FXML
-    public void switchToTranslationScene(ActionEvent event) throws IOException {
+    public void switchToTranslationScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         currentScene = SCENE.TRANSLATION_SCENE;
         FXMLLoader settingSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "TranslationScene.fxml"));
         root = settingSceneLoader.load();

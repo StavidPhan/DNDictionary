@@ -210,7 +210,7 @@ public class TranslationController extends Controller implements Initializable {
     }
 
     @FXML
-    public void handleCloseButtonAction(ActionEvent event) {
+    public void handleCloseButtonAction(@SuppressWarnings("exports") ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
     }
@@ -228,7 +228,7 @@ public class TranslationController extends Controller implements Initializable {
                 voice.allocate();
                 voice.speak(text); // Phát âm văn bản
             } else {
-                System.err.println("Cannot find voice: kevin16");
+                System.err.println("Cannot find voice");
             }
         }
 

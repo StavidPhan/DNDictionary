@@ -2,7 +2,6 @@ package com.example.dndictionary.controllers;
 
 import com.example.dndictionary.game.ChooseItem;
 import com.example.dndictionary.game.Item;
-import com.example.dndictionary.game.MultipleChoiceQuestion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -115,7 +114,7 @@ public class ChooseItemController extends Controller {
     }
 
     @FXML
-    public void initializeQuestion(ActionEvent event) {
+    public void initializeQuestion(@SuppressWarnings("exports") ActionEvent event) {
         correctLabel.setText("Choose the correct item!");
         correctItem = chooseItem.returnRandomItem();
         correctItem.setChosen(true);
@@ -175,7 +174,7 @@ public class ChooseItemController extends Controller {
     }
 
 
-    public void clickImageView1(MouseEvent event) throws IOException {
+    public void clickImageView1(@SuppressWarnings("exports") MouseEvent event) throws IOException {
         if (items[0] == correctItem) {
             correct();
             setQuestionByAction();
@@ -184,7 +183,7 @@ public class ChooseItemController extends Controller {
         }
     }
 
-    public void clickImageView2(MouseEvent event) throws IOException {
+    public void clickImageView2(@SuppressWarnings("exports") MouseEvent event) throws IOException {
         if (items[1] == correctItem) {
             correct();
             setQuestionByAction();
@@ -193,7 +192,7 @@ public class ChooseItemController extends Controller {
         }
     }
 
-    public void clickImageView3(MouseEvent event) throws IOException {
+    public void clickImageView3(@SuppressWarnings("exports") MouseEvent event) throws IOException {
         if (items[2] == correctItem) {
             correct();
             setQuestionByAction();
@@ -202,7 +201,7 @@ public class ChooseItemController extends Controller {
         }
     }
 
-    public void clickImageView4(MouseEvent event) throws IOException {
+    public void clickImageView4(@SuppressWarnings("exports") MouseEvent event) throws IOException {
         if (items[3] == correctItem) {
             correct();
             setQuestionByAction();
@@ -212,7 +211,7 @@ public class ChooseItemController extends Controller {
     }
 
     @FXML
-    public void switchToGameScene(ActionEvent event) throws IOException {
+    public void switchToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
         root = gameScene.load();
 
@@ -225,7 +224,7 @@ public class ChooseItemController extends Controller {
     }
 
     @FXML
-    public void end(ActionEvent event) throws IOException {
+    public void end(@SuppressWarnings("exports") ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "ChooseItemEnd.fxml"));
         root = loader.load();
 
