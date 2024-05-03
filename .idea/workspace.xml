@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c1e969c-736e-4166-8357-2a324c5f36f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/oneHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/threeHeart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/pictures/twoHeart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/ChooseItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/controllers/MultipleChoiceEndController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/dndictionary/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItem.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/ChooseItemEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/MultipleChoiceEnd.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/dndictionary/views/multipleChoiceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +25,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -64,6 +46,7 @@
     "git-widget-placeholder": "tabAddNewWord",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/UET_CN2/3_junior/HK2/OOP/dictionary_project/DNDictionary",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
