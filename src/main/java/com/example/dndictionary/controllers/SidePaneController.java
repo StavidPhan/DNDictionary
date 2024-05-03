@@ -81,19 +81,7 @@ public class SidePaneController extends Controller implements Initializable {
      * Function to switch to game scene.
      * ATTENTION: this function is also used in class MultipleChoiceEndController.
      */
-    @FXML
-    public void switchToGameScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
-        currentScene = SCENE.GAME_SCENE;
-        FXMLLoader gameScene = new FXMLLoader(getClass().getResource(VIEWS_PATH + "gameScene.fxml"));
-        root = gameScene.load();
-
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        ApplicationColorController.setColor(scene);
-        scene.setFill(Color.TRANSPARENT);
-        stage.setScene(scene);
-        stage.show();
-    }
+   
 
     @FXML
     public void switchToSettingScene(@SuppressWarnings("exports") ActionEvent event) throws IOException {
