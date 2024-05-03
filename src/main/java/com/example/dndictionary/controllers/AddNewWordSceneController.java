@@ -176,14 +176,16 @@ public class AddNewWordSceneController extends Controller implements Initializab
         if (voice != null)
         {
             voice.allocate();
+            System.out.println("Voice rate: " + voice.getRate());
+            System.out.println("Voice pitch: " + voice.getPitch());
             System.out.println("Voice volume: " + voice.getVolume());
             boolean status = voice.speak(currentSelectedWord.getWord());
+            System.out.println("Status: " + status);
             voice.deallocate();
         } else {
             System.err.println("error something");
         }
     }
-
     //display word.
     @FXML
     public void displayWord(MouseEvent event) throws IOException {
