@@ -75,6 +75,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
         list.setItems(words);
         list.setCellFactory(userDefinedWordListView -> new UserDefinedWordListViewCell());
 
+        //load sidepane.
         FXMLLoader sidePaneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "SidePane.fxml"));
         try {
             Parent sidePaneLoaded = sidePaneLoader.load();
@@ -83,12 +84,14 @@ public class AddNewWordSceneController extends Controller implements Initializab
             throw new RuntimeException(e);
         }
 
+        // connect to database.
         try {
             connection = DriverManager.getConnection(Utilities.PATH_TO_DATABASE);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
+        // get data from database.
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM userDefinedWords");
@@ -102,6 +105,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
         }
     }
 
+    // searchWord method.
     public void searchWord() {
         ObservableList<UserDefinedWord> words = FXCollections.observableArrayList();
         list.setItems(words);
@@ -126,6 +130,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
 
     }
 
+    //voice.
     @FXML
     public void speak(ActionEvent event) {
         System.setProperty(
@@ -152,6 +157,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
         }
     }
 
+    //display word.
     @FXML
     public void displayWord(MouseEvent event) throws IOException {
         currentSelectedWord = list.getFocusModel().getFocusedItem();
@@ -160,35 +166,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
         meaningLabel.setText(currentSelectedWord.getMeaning());
     }
 
-    public void addUserDefinedWord(ActionEvent event) {
-        UserDefinedWord word = new UserDefinedWord(userDefinedWord.getText(), userDefinedMeaning.getText());
-        System.out.println(word.getWord());
-        System.out.println(word.getMeaning());
-        if (word.getWord() != null) {
-            boolean success = Model.addUserDefinedWord(word);
-            if (!success) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText("This word already exists in your dictionary.");
-                alert.show();
-                return;
-            }
-            FXMLLoader wordSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "AddNewWordScene.fxml"));
-            Parent root = null;
-            try {
-                root = wordSceneLoader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            ApplicationColorController.setColor(scene);
-            scene.setFill(Color.TRANSPARENT);
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
-
+    
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
