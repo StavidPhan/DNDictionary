@@ -38,6 +38,8 @@ public class HangManEndController extends Controller {
             emotionBox.setText("Seriously?");
         } else if (score >= 50) {
             emotionBox.setText("Good job baby!");
+        } else {
+            emotionBox.setText("Try harder baby!");
         }
     }
 
