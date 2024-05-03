@@ -166,36 +166,7 @@ public class AddNewWordSceneController extends Controller implements Initializab
         meaningLabel.setText(currentSelectedWord.getMeaning());
     }
 
-    //add new word.
-    public void addUserDefinedWord(ActionEvent event) {
-        UserDefinedWord word = new UserDefinedWord(userDefinedWord.getText(), userDefinedMeaning.getText());
-        System.out.println(word.getWord());
-        System.out.println(word.getMeaning());
-        if (word.getWord() != null) {
-            boolean success = Model.addUserDefinedWord(word);
-            if (!success) {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setContentText("This word already exists in your dictionary.");
-                alert.show();
-                return;
-            }
-            FXMLLoader wordSceneLoader = new FXMLLoader(getClass().getResource(VIEWS_PATH + "AddNewWordScene.fxml"));
-            Parent root = null;
-            try {
-                root = wordSceneLoader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            ApplicationColorController.setColor(scene);
-            scene.setFill(Color.TRANSPARENT);
-            stage.setScene(scene);
-            stage.show();
-        }
-    }
-
+    
     @FXML
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) closeButton.getScene().getWindow();
