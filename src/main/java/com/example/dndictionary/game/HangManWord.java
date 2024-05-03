@@ -9,7 +9,7 @@ public class HangManWord {
     public String word;
     public boolean[] list;
 
-    private static final int MAX_CHAR = 25;
+    private static final int MAX_CHAR = 20;
     public List<Character> listChar = new ArrayList<>();
     public boolean[] list1 = new boolean[MAX_CHAR];
     private int charCorrect = 0;
